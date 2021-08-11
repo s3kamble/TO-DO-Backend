@@ -31,19 +31,17 @@ const validation = (req,res,next) =>{
    if (req.params.isComplete){
         validKeys.push("isComplete") ;
    }
+
    validKeys.sort();
-   let count=0;
+   let invalidKeyCount=0;
+
    validKeys.forEach((key)=>{
-       console.log("bfr if");
         if(Object.keys(req.body).sort().indexOf(key) == -1){ 
-       console.log("after if");
-            count=+1
-        //   return sendResponse({res:res,statusCode:404,message:"Invalid request from validation",error:"Invalid request"});
+            invalidKeyCount=+1
         }
    });
-   if(count>0){
+   if(invalidKeyCount>0){
           return sendResponse({res:res,statusCode:404,message:"Invalid request from validation",error:"Invalid request"});
-
    }
     next();
 }
@@ -79,31 +77,6 @@ const deleteTask = (req,res,next) =>{
     });
 }
 
-const updateValidation=(req,res,next)=>{
-    if(!req.body.content){
-        return sendResponse({
-            res,
-            statusCode: 404,
-            message: "Empty content",
-            error: "Empty content not allowed",
-        });
-    }
-    let Validkeys=["content","createdAt","updatedAt"];
-    if(req.params.taskId){
-        Validkeys.push("isComplete")
-    }
-    flag = Validkeys.every((key)=>Object.keys(req.body).includes(key));
-    if(Validkeys.length !== Object.keys(req.body).length && !flag){
-        return sendResponse({
-            res,
-            statusCode: 404,
-            message: "Invalid Keys",
-            error: "Invalid Request",
-        });
-    }
-    next();
-}
-
 const updateTask = (req,res,next) =>{
     const taskToDelete = Tasks.find(task =>task.taskId===req.params.taskId);
     const index = Tasks.indexOf(taskToDelete);
@@ -130,6 +103,5 @@ module.exports = {
     validation,
     createTask,
     deleteTask,
-    updateValidation,
     updateTask
 };
