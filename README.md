@@ -68,6 +68,9 @@
    ```sh
    npm install
    ```
+3. Start with the following command
+   ```sh
+   npm run start
 <br>
 <br>
 <br>
@@ -76,7 +79,7 @@
 ## <u><b>Usage</b></u>
 <br>
 <ul>
-    <li>To integrate with front-end applications to the below mentioned endpoints,as and when required </li>
+    <li>To integrate  front-end applications use the below mentioned endpoints,as and when required </li>
     <li>To test the given endpoints,use "Postman" app </li>
 </ul>
 <br>

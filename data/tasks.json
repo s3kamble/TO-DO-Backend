@@ -45,18 +45,21 @@
     "taskId": "rfa2z63fks7snca9",
     "content": "Task 7",
     "createdAt": "Some Date",
+    "updatedAt": "",
     "isComplete": false
   },
   {
     "taskId": "rfa2z63fks7spc6q",
     "content": "Task 8",
     "createdAt": "Some Date",
+    "updatedAt": "",
     "isComplete": false
   },
   {
     "taskId": "rfa2z65bks7spxwp",
     "content": "Task 8",
     "createdAt": "Some Date",
+    "updatedAt": "",
     "isComplete": false
   },
   {
