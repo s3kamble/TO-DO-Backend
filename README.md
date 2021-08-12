@@ -26,6 +26,8 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#data-file">Data file</a></li>
+    <li><a href="#directory-tree">Directory-tree</a></li>
+
 
   </ol>
 </details>
@@ -168,7 +170,26 @@
 <br>
 
 
-### <b>Data File<b>
+### <b>Data File</b>
 - The data already displayed on GET request is from "tasks.json" file in data folder
 - The POST and PUT requests are reflected in the "tasks.json" file
+
+### <b>Directory-tree</b>
+```
+├── app.js
+├── controllers
+│   └── taskController.js
+├── data
+│   └── tasks.json
+├── models
+│   └── taskModel.js
+├── node_modules     ├
+├── package.json
+├── package-lock.json
+├── README.md
+├── routes
+│   └── taskRouter.js
+└── utils
+    └── sendResponse.js
+```
 
