@@ -1,6 +1,5 @@
 const sendResponse = ({res,statusCode, message, data,error}) => {
-    // res.status(statusCode);
-    res.statusCode=statusCode;
+    res.status(statusCode);
     if(error) {
         console.log(error);
         return res.json({
