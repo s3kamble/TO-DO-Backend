@@ -7,6 +7,10 @@
 - Add Tasks
 - Update Existing Task
 - Delete Existing Task
+<br>
+<br>
+<br>
+
 
 <details open="open">
   <summary><b>Table of Contents</b></summary>
@@ -25,17 +29,32 @@
 
   </ol>
 </details>
+<br>
+<br>
+<br>
+
 
 ### <b>Prerequisites</b>
 -  Javascript(ES5,ES6)
+<br>
+<br>
+<br>
+
 
 ### <b>Folder Structure</b>
 - Model-View-Controller (MVC) folder structure
+<br>
+<br>
+<br>
+
 
 ### <b>Built With</b>
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
 * [REST API](https://restfulapi.net/)
+<br>
+<br>
+<br>
 
 ### <b>Installation</b>
 - Open terminal,redirect to the folder where you want this repository.
@@ -49,13 +68,18 @@
    ```sh
    npm install
    ```
-   
+<br>
+<br>
+<br>
+
+
 ## <u><b>Usage</b></u>
 <br>
 <ul>
     <li>To integrate with front-end applications to the below mentioned endpoints,as and when required </li>
     <li>To test the given endpoints,use "Postman" app </li>
 </ul>
+<br>
 
 <h1>Get all tasks</h1>
 <h2>GET request </h2>
@@ -65,6 +89,8 @@
 
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/op-get.png)
 
+<br>
+<br>
 
 <h1>Get a particular Task by id</h1>
 <h2>GET request </h2>
@@ -74,6 +100,9 @@
 <p>Expected Output: </p>
 
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/op-get-id.png)
+
+<br>
+<br>
 
 <h1>Add a Task</h1>
 <h2>POST request </h2>
@@ -85,17 +114,15 @@
     <li>createdAt:string </li>
     <li>updatedAt:string </li>
     <li>isCompleted:boolean</li>
+    <img src="https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/Post-request-eg.png">
+    </img>
     <li>
-        Example:
-
-        ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/Post-request-eg.png)
-    </li>
-    <li>
-        <p>Expected Output: </p>
-
-        ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/output-post.png)
-    </li>
+         <p>Expected Output: </p>        
+         <img src="https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/output-post.png"></img>
+   </li>
 </ul>
+<br>
+<br>
 
 <h1>Update an existing Task</h1>
 <h2>PUT request </h2>
@@ -109,15 +136,15 @@
     <li>isCompleted:boolean</li>
     <li>
         Example:
-
-        ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/put-eg.png)
+        <img src="https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/put-eg.png"></img>
     </li>
       <li>
         <p>Expected Output: </p>
-
-        ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/op-put.png)
+        <img src="https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/op-put.png">
     </li>
 </ul>
+<br>
+<br>
 
 <h1>DELETE a particular Task by id</h1>
 <h2>DELETE request </h2>
@@ -133,8 +160,12 @@
 <br>
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/error.png)
 
+<br>
+<br>
+<br>
 
 
-### Data File
+### <b>Data File<b>
 - The data already displayed on GET request is from "tasks.json" file in data folder
 - The POST and PUT requests are reflected in the "tasks.json" file
+
