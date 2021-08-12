@@ -73,7 +73,7 @@ const deleteTask = (req,res,next) =>{
             Tasks.pop();
             return sendResponse({res:res,statusCode:500,message:"Error in deleting data",error:err});
         }
-        sendResponse({res:res,statusCode:400,message:"Successfully deleted request"});
+        sendResponse({res:res,statusCode:204,message:"Successfully deleted request"});
     });
 }
 
