@@ -78,8 +78,8 @@ const deleteTask = (req,res,next) =>{
 }
 
 const updateTask = (req,res,next) =>{
-    const taskToDelete = Tasks.find(task =>task.taskId===req.params.taskId);
-    const index = Tasks.indexOf(taskToDelete);
+    const taskToUpdate = Tasks.find(task =>task.taskId===req.params.taskId);
+    const index = Tasks.indexOf(taskToUpdate);
 
     if (index === -1) {
         return sendResponse({res:res,statusCode:404,message:"Data not found",error:"Data not found"});
@@ -93,7 +93,7 @@ const updateTask = (req,res,next) =>{
         if(err){
             return sendResponse({res:res,statusCode:500,message:"Error in updating data",error:err});
         }
-        sendResponse({res:res,statusCode:200,message:"Successfully updated task"});
+        sendResponse({res:res,statusCode:200,message:"Successfully updated task",data:Tasks[index]});
     });
 }
 
