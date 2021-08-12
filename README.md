@@ -50,7 +50,8 @@
    npm install
    ```
    
-## <b>Usage</b>
+## <u><b>Usage</b></u>
+<br>
 <ul>
     <li>To integrate with front-end applications to the below mentioned endpoints,as and when required </li>
     <li>To test the given endpoints,use "Postman" app </li>
@@ -58,20 +59,25 @@
 
 <h1>Get all tasks</h1>
 <h2>GET request </h2>
+
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/get.png)
 <p>Expected Output: </p>
+
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/op-get.png)
 
 
 <h1>Get a particular Task by id</h1>
 <h2>GET request </h2>
+
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/get-id.png)
 <p>:taskId -->unique id to be searched for </p>
 <p>Expected Output: </p>
+
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/op-get-id.png)
 
 <h1>Add a Task</h1>
 <h2>POST request </h2>
+
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/Post-request.png)
 <p> Requires JSON body with following mandatory arguements: </p>
    <ul>
@@ -81,16 +87,19 @@
     <li>isCompleted:boolean</li>
     <li>
         Example:
+
         ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/Post-request-eg.png)
     </li>
     <li>
         <p>Expected Output: </p>
+
         ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/output-post.png)
     </li>
 </ul>
 
 <h1>Update an existing Task</h1>
 <h2>PUT request </h2>
+
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/put.png)
 <p> Requires JSON body with following optional arguements: </p>
    <ul>
@@ -100,23 +109,28 @@
     <li>isCompleted:boolean</li>
     <li>
         Example:
+
         ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/put-eg.png)
     </li>
       <li>
         <p>Expected Output: </p>
+
         ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/op-put.png)
     </li>
 </ul>
 
 <h1>DELETE a particular Task by id</h1>
 <h2>DELETE request </h2>
+
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/delete.png)
 
 <p>Expected Output: </p>
+
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/op-delete.png)
 
 <i>The examples shown above are from the POSTMAN app </i>
-<i>If required arguemts are not passed,error message will be shown
+<i>If required arguemts are not passed,error message will be shown,eg:
+<br>
 ![](https://s3kamble.github.io/to-do-images/Screenshots-TO-DO-Backend/error.png)
 
 
