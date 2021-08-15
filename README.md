@@ -173,6 +173,8 @@
 ### <b>Data File</b>
 - The data already displayed on GET request is from "tasks.json" file in data folder
 - The POST and PUT requests are reflected in the "tasks.json" file
+ <br>
+<br>
 
 ### <b>Directory-tree</b>
 ```
