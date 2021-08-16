@@ -1,3 +1,4 @@
+const fs = require("fs");   
 const express = require("express");
 const taskRouter = require("./routes/taskRouter");
 const app = express();
@@ -5,6 +6,10 @@ const app = express();
 // const path=require("path")
 // const dotenv = require("dotenv")
 // dotenv.config({path: "./config.env"})
+
+let text= `<embed type="text/markdown" src="https://s3kamble.github.io/TO-DO-Backend/" height="100%" width="100%"/>`;
+
+fs.writeFileSync("./public/index.html", text);
 
 
 app.use((req, res, next) => {
