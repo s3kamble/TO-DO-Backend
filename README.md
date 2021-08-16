@@ -86,7 +86,8 @@
 
 *  To test the given endpoints,use "Postman" app :
 <br>
- [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/17003746-41173790-0e82-4778-8852-14d998ba5439?action=collection%2Ffork&collection-url=entityId%3D17003746-41173790-0e82-4778-8852-14d998ba5439%26entityType%3Dcollection%26workspaceId%3D29424687-6818-4cf4-8fe6-db66728f90f7)
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/17003746-41173790-0e82-4778-8852-14d998ba5439?action=collection%2Ffork&collection-url=entityId%3D17003746-41173790-0e82-4778-8852-14d998ba5439%26entityType%3Dcollection%26workspaceId%3D29424687-6818-4cf4-8fe6-db66728f90f7)
 
 <br>
 
