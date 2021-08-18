@@ -1,11 +1,9 @@
 const fs = require("fs");   
 const express = require("express");
 const taskRouter = require("./routes/taskRouter.js");
-const app = express();
+// const Tasks = require("./models/taskModel.js");
 
-// const path=require("path")
-// const dotenv = require("dotenv")
-// dotenv.config({path: "./config.env"})
+const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));

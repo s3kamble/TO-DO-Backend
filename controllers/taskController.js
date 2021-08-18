@@ -1,19 +1,22 @@
 const fs = require("fs");
 const path = require("path");
 const Task = require("../models/taskModel");
+const{findAllTasks,findOneTask,insertOneTask,deleteOneTask,updateOneTask} = require("./dataController.js");
 const dataSource = path.join(__dirname,"..","data","tasks.json");
 const Tasks = JSON.parse(fs.readFileSync(dataSource,"utf-8"));
 const sendResponse = require("../utils/sendResponse");
 
-const getAllTasks = (req,res) =>{
-    return sendResponse({res:res,statusCode:200,message:"Data fetched",data:Tasks});
+const getAllTasks = async (req,res) =>{ 
+    let data =await findAllTasks() ;
+    return sendResponse({res:res,statusCode:200,message:"Data fetched",data:await data});
 };
 
-const getTaskById = (req,res,next) =>{
+const getTaskById = async (req,res,next) =>{
     let {taskId} = req.params;
-    let taskFound =Tasks.find(task =>task.taskId === taskId);
+    let taskFound =await findOneTask({"taskId":"taskId"} ) ;
+
     if(!taskFound){
-    return sendResponse({res:res,statusCode:404,message:"Task not fetched",error:"ID not found"});
+      return sendResponse({res:res,statusCode:404,message:"Task not fetched",error:"ID not found"});
     }
     sendResponse({res:res,statusCode:200,message:"Data fetched",data:taskFound});
 }
@@ -46,55 +49,39 @@ const validation = (req,res,next) =>{
     next();
 }
 
-const createTask = (req,res,next) =>{
-      let newTask = new Task(req.body);
-      Tasks.push(newTask);
-      fs.writeFile(dataSource, JSON.stringify(Tasks,null,2), (err)=>{
-          if(err){
-              Tasks.pop()
-              return sendResponse({res:res,statusCode:500,message:"Error in creating task",error:err});           
-          }
-        sendResponse({res:res,statusCode:200,message:"Task Added",data:newTask});
-      })
+const createTask = async(req,res,next) =>{
+    let newTask = new Task(req.body);
+ 
+    let newTaskAdd = await insertOneTask(newTask);
+    if(!newTaskAdd){
+         return sendResponse({res:res,statusCode:500,message:"Error in creating task",error:"Error in adding data to server"});           
+    }
+    sendResponse({res:res,statusCode:200,message:"Task Added",data:newTaskAdd});
 }
 
-const deleteTask = (req,res,next) =>{
-    const taskToDelete = Tasks.find(task =>task.taskId===req.params.taskId);
-    const index = Tasks.indexOf(taskToDelete);
-
-    if (index=== -1) {
-        return sendResponse({res:res,statusCode:404,message:"Data not found",error:"Data not found"});
-    }
-    
-    Tasks.splice(index, 1);
-
-    fs.writeFile(dataSource,JSON.stringify(Tasks,null,2),(err) =>{
-        if(err){
-            Tasks.pop();
-            return sendResponse({res:res,statusCode:500,message:"Error in deleting data",error:err});
-        }
-        sendResponse({res:res,statusCode:204,message:"Successfully deleted request"});
-    });
+const deleteTask = async(req,res,next) =>{
+  
+    let {taskId} = req.params;
+    let taskToDelete = await deleteOneTask({"taskId":taskId});
+    console.log(taskToDelete)
+    if(taskToDelete.deletedCount == 0){
+        return sendResponse({res:res,statusCode:500,message:"Error in deleting task",error:"Invalid task id"});         
+   }
+   sendResponse({res:res,statusCode:204,message:"Successfully deleted task"});
 }
 
-const updateTask = (req,res,next) =>{
-    const taskToUpdate = Tasks.find(task =>task.taskId===req.params.taskId);
-    const index = Tasks.indexOf(taskToUpdate);
+const updateTask = async (req,res,next) =>{
 
-    if (index === -1) {
-        return sendResponse({res:res,statusCode:404,message:"Data not found",error:"Data not found"});
-    }
+    let {taskId} = req.params;
     
-   Object.keys(req.body).forEach((key)=>{
-        Tasks[index][key] = req.body[key];
-    });
-
-    fs.writeFile(dataSource,JSON.stringify(Tasks,null,2),(err) =>{
-        if(err){
-            return sendResponse({res:res,statusCode:500,message:"Error in updating data",error:err});
-        }
-        sendResponse({res:res,statusCode:200,message:"Successfully updated task",data:Tasks[index]});
-    });
+    let updateData=await updateOneTask({"taskId":taskId},{$set:req.body});
+    
+    if(updateData.modifiedCount == 0){
+            return sendResponse({res:res,statusCode:500,message:"Error in updating data",error:"Id not found"});
+      }
+    sendResponse({res:res,statusCode:200,message:"Successfully updated task"});
+    
+    
 }
 
 module.exports = {
